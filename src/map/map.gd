@@ -20,6 +20,9 @@ class Coordinates:
 	static func from_vec(vec: Vector2i) -> Coordinates:
 		return Coordinates.new(vec.x, vec.y)
 
+	func _to_string() -> String:
+		return "(" + str(q) + ", " + str(r) + ", " + str(s) + ")"
+
 	func get_neighbours() -> Array[Coordinates]:
 		if !_neighbours_initialized:
 			_neighbours = []

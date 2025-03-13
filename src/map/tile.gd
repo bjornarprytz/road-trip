@@ -35,12 +35,13 @@ var isHovered: bool
 @onready var baseModulate: Color = self.modulate
 
 func activate() -> void:
+	print("Activating %s" % coordinates.get_key())
 	for a in actions:
 		self.apply(a as TileAction)
 	actions.clear()
 
 func apply(action: TileAction):
-	print("%s: %s" % [coordinates, action.description])
+	print("%s: %s" % [coordinates.to_string(), action.description])
 	state = action.targetState
 	baseModulate = action.color
 
