@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://clj1s62h47i01"]
+
+[ext_resource type="Script" uid="uid://cbwrcw0dhq2jx" path="res://map/map.gd" id="1_70clt"]
+
+[node name="Map" type="Node2D"]
+script = ExtResource("1_70clt")
+
+[node name="Tiles" type="Node2D" parent="."]
+
+[node name="Structures" type="Node2D" parent="."]

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4ank3cirxja1"]
+
+[ext_resource type="Script" uid="uid://d4mjw56dtrnuq" path="res://map/tile.gd" id="1_8g4um"]
+[ext_resource type="PackedScene" uid="uid://c57sfkee815gl" path="res://basic/polygon.tscn" id="1_jf52k"]
+
+[node name="Tile" type="Node2D"]
+script = ExtResource("1_8g4um")
+
+[node name="Shape" parent="." instance=ExtResource("1_jf52k")]
+polygon = PackedVector2Array(50, 0, 25, 43.3013, -25, 43.3013, -50, 6.12303e-15, -25, -43.3013, 25, -43.3013)
+size = 50.0
+border_width = 2.0
+clickable = true

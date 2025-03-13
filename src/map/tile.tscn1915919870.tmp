@@ -1,0 +1,91 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4ank3cirxja1"]
+
+[ext_resource type="Script" uid="uid://d4mjw56dtrnuq" path="res://map/tile.gd" id="1_8g4um"]
+[ext_resource type="PackedScene" uid="uid://c57sfkee815gl" path="res://basic/polygon.tscn" id="1_jf52k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_edcew"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_detail = 12
+
+[node name="Tile" type="Node2D"]
+script = ExtResource("1_8g4um")
+
+[node name="Shape" parent="." instance=ExtResource("1_jf52k")]
+polygon = PackedVector2Array(50, 0, 25, 43.3013, -25, 43.3013, -50, 6.12303e-15, -25, -43.3013, 25, -43.3013)
+size = 50.0
+border_width = 2.0
+clickable = true
+
+[node name="Icon" type="Sprite2D" parent="."]
+modulate = Color(0.937255, 0.937255, 0.937255, 0.196078)
+scale = Vector2(0.0859375, 0.0859375)
+
+[node name="PlacementBonus" parent="." instance=ExtResource("1_jf52k")]
+visible = false
+color = Color(0, 1, 1, 1)
+polygon = PackedVector2Array(16, 0, 8, 13.8564, -8, 13.8564, -16, 1.95937e-15, -8, -13.8564, 8, -13.8564)
+size = 16.0
+border_width = 2.0
+
+[node name="Debug" type="Node2D" parent="."]
+visible = false
+
+[node name="Q" type="RichTextLabel" parent="Debug"]
+modulate = Color(0, 0, 0, 1)
+offset_left = -10.0
+offset_top = -31.0
+offset_right = 15.0
+offset_bottom = -7.0
+mouse_filter = 2
+text = "g"
+
+[node name="R" type="RichTextLabel" parent="Debug"]
+modulate = Color(0, 0, 0, 1)
+offset_left = 9.0
+offset_top = -1.0
+offset_right = 34.0
+offset_bottom = 23.0
+mouse_filter = 2
+text = "g"
+
+[node name="S" type="RichTextLabel" parent="Debug"]
+modulate = Color(0, 0, 0, 1)
+offset_left = -24.0
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = 23.0
+mouse_filter = 2
+text = "g"
+
+[node name="Hovered" type="ColorRect" parent="Debug"]
+visible = false
+modulate = Color(0, 0, 0, 1)
+offset_left = -27.0
+offset_top = -15.0
+offset_right = -16.0
+offset_bottom = -4.0
+mouse_filter = 2
+
+[node name="Tooltip" type="RichTextLabel" parent="."]
+visible = false
+z_index = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -66.0
+offset_right = 166.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_edcew")
+fit_content = true

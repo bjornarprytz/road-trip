@@ -3,25 +3,24 @@
 game on itch.io: [link](https://thewarlock.itch.io/road-trip)
 
 Stipulation: Text based
-Additional themes:
-
-- "Sacrifices must be made"
-- "An unconventional weapon"
 
 As always, non-violence
 
+A hex based game where you take actions by typing a letter each turn.
+
+- Hex based
+
 ## TODO
 
-- Import the project into Godot
+- Game play
+  - Wait for input:
+    - Letter, followed by enter
+    - Can switch letters, or hit esc to cancel
+- UI
+  - Summarize the result of a move before they hit enter
+- Theme
+  - Civilization settling, exploring, expanding
 
-- Setup itch.io page for road-trip [link](https://itch.io/game/new)
-  - Set Kind to HTML
-  - Set viewport dimensions (normal: 1280x720)
-  - Check SharedArrayBuffer
-  - Hit the Save button
-- Get Butler API key from [itch.io](https://itch.io/user/settings/api-keys)
-- Publish github repo
-- Add key to GitHub secrets as BUTLER_API_KEY [link](https://github.com/bjornarprytz/road-trip/settings/secrets/actions)
 - Push release with `./push_release.sh`
 
 ### Extra
@@ -34,11 +33,3 @@ As always, non-violence
   - Pick a genre
   - Add a tag or two
   - Publish a devlog on instagram
-
-### Meta
-
-- Figure out how to use these Godot tools
-  - Theme
-  - UI
-- Tackle multiplayer in HTML5
-  - https://www.reddit.com/r/godot/comments/bux2hs/how_to_use_godots_high_level_multiplayer_api_with/
