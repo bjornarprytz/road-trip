@@ -41,7 +41,7 @@ func activate() -> void:
 	actions.clear()
 
 func apply(action: TileAction):
-	print("%s: %s" % [coordinates.to_string(), action.description])
+	print("%s: %s" % [coordinates, action.description])
 	state = action.targetState
 	baseModulate = action.color
 
