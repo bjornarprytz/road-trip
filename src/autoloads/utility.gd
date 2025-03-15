@@ -61,6 +61,16 @@ static func random_vector() -> Vector2:
 		randf_range(-1, 1)
 	)
 
+static func random_word(length: int) -> String:
+	assert(length > 0)
+
+	var letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+	var word = ""
+	for i in range(length):
+		word += letters[randi() % letters.length()]
+	
+	return word
+
 static func fade_in(node: CanvasItem, duration: float) -> Tween:
 	var tween = node.create_tween()
 	node.modulate.a = 0

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctycae8716wv7"]
+
+[ext_resource type="Script" uid="uid://dgt3gn2130gam" path="res://action/puzzle.gd" id="1_cgctm"]
+
+[node name="Puzzle" type="GridContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 3
+script = ExtResource("1_cgctm")

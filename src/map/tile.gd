@@ -9,14 +9,6 @@ var map: Map
 var actions: Array[TileAction] = []
 var state: String
 
-@onready var letter: String:
-	set(value):
-		if (value.length() > 1):
-			push_error("Letter can't be longer than 1")
-		%Letter.text = value
-	get:
-		return %Letter.text
-
 @onready var shape: RegularPolygon:
 	get:
 		return $Shape
@@ -33,6 +25,7 @@ var coordinates: Map.Coordinates:
 
 var isHovered: bool
 @onready var baseModulate: Color = self.modulate
+@onready var puzzle: Puzzle = %Puzzle
 
 func activate() -> void:
 	print("Activating %s" % coordinates.get_key())
@@ -76,6 +69,8 @@ func _ready() -> void:
 	create_tween().tween_property(self, 'scale', Vector2.ONE, .2)
 	shape.clicked.connect(_on_tile_pressed)
 	shape.hovered.connect(_on_tile_hovered)
+
+	puzzle.set_word(Utility.random_word(3))
 
 func _on_tile_pressed() -> void:
 	onClicked.emit(self)

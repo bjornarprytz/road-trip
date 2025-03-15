@@ -132,7 +132,6 @@ func _add_tile(q: int, r: int) -> Tile:
 	newTile.size = tileSize
 
 	newTile.actions.push_back(TileAction.discover())
-	newTile.letter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"[randi() % 26]
 
 	newTile.onHovered.connect(_on_tile_hovered)
 	newTile.onClicked.connect(_on_tile_clicked)
